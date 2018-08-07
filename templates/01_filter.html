@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+</head>
+<body>
+{# truncate 有四个参数：
+第一个参数表示要截取的长度
+第二个参数表示是否将单词拆分（True or False）
+第三个参数表示截取的样式 ...
+第四个参数表示边界值，好像默认是6位
+截取的长度+边界值大于
+#}
+{#整段字符串长22#}
+{#其中hello 5位，world 5位， and 3位， python 6位#}
+<p>{{'hello world and python' | truncate(16)}}</p>
+<p>{{'hello world and python' | truncate(16, True)}}</p>
+<p>{{'hello world and python' | truncate(16, True, '***')}}</p>
+<p>{{'hello world and python' | truncate(17, True, '***', 0)}}</p>
+
+</body>
+</html>
